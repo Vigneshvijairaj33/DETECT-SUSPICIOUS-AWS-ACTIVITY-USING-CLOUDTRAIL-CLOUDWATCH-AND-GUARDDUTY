@@ -1,0 +1,122 @@
+[
+  {
+    "eventTime": "2026-10-12T08:01:00Z",
+    "eventName": "DescribeInstances",
+    "eventSource": "ec2.amazonaws.com",
+    "user": "alice",
+    "sourceIP": "203.0.113.10",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T08:02:00Z",
+    "eventName": "ListBuckets",
+    "eventSource": "s3.amazonaws.com",
+    "user": "alice",
+    "sourceIP": "203.0.113.10",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T08:05:00Z",
+    "eventName": "ConsoleLogin",
+    "eventSource": "signin.amazonaws.com",
+    "user": "unknown",
+    "sourceIP": "198.51.100.55",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T08:10:00Z",
+    "eventName": "ConsoleLogin",
+    "eventSource": "signin.amazonaws.com",
+    "user": "bob",
+    "sourceIP": "198.51.100.77",
+    "errorCode": "Failed authentication"
+  },
+  {
+    "eventTime": "2026-10-12T08:10:30Z",
+    "eventName": "ConsoleLogin",
+    "eventSource": "signin.amazonaws.com",
+    "user": "bob",
+    "sourceIP": "198.51.100.77",
+    "errorCode": "Failed authentication"
+  },
+  {
+    "eventTime": "2026-10-12T08:11:00Z",
+    "eventName": "ConsoleLogin",
+    "eventSource": "signin.amazonaws.com",
+    "user": "bob",
+    "sourceIP": "198.51.100.77",
+    "errorCode": "Failed authentication"
+  },
+  {
+    "eventTime": "2026-10-12T08:15:00Z",
+    "eventName": "AttachUserPolicy",
+    "eventSource": "iam.amazonaws.com",
+    "user": "charlie",
+    "sourceIP": "203.0.113.20",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T08:20:00Z",
+    "eventName": "AuthorizeSecurityGroupIngress",
+    "eventSource": "ec2.amazonaws.com",
+    "user": "charlie",
+    "sourceIP": "203.0.113.20",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T02:30:00Z",
+    "eventName": "StopLogging",
+    "eventSource": "cloudtrail.amazonaws.com",
+    "user": "eve",
+    "sourceIP": "198.51.100.99",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T09:00:00Z",
+    "eventName": "DescribeSecurityGroups",
+    "eventSource": "ec2.amazonaws.com",
+    "user": "alice",
+    "sourceIP": "203.0.113.10",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T03:15:00Z",
+    "eventName": "PutBucketPolicy",
+    "eventSource": "s3.amazonaws.com",
+    "user": "frank",
+    "sourceIP": "198.51.100.200",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T09:30:00Z",
+    "eventName": "GetCallerIdentity",
+    "eventSource": "sts.amazonaws.com",
+    "user": "grace",
+    "sourceIP": "203.0.113.30",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T04:00:00Z",
+    "eventName": "CreateAccessKey",
+    "eventSource": "iam.amazonaws.com",
+    "user": "heidi",
+    "sourceIP": "192.0.2.100",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T09:45:00Z",
+    "eventName": "ListUsers",
+    "eventSource": "iam.amazonaws.com",
+    "user": "alice",
+    "sourceIP": "203.0.113.10",
+    "errorCode": null
+  },
+  {
+    "eventTime": "2026-10-12T10:00:00Z",
+    "eventName": "TerminateInstances",
+    "eventSource": "ec2.amazonaws.com",
+    "user": "ivan",
+    "sourceIP": "203.0.113.50",
+    "errorCode": null
+  }
+]

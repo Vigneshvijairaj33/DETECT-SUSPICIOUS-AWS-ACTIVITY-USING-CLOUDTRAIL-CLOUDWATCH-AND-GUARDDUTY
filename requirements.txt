@@ -1,0 +1,38 @@
+# ============================================================
+# requirements.txt — AWS Suspicious Activity Detector
+# Pin exact versions for reproducibility and security.
+# Install with: pip install -r requirements.txt
+# ============================================================
+
+# --- AWS SDK ---
+boto3==1.34.69          # AWS SDK for Python
+botocore==1.34.69       # Low-level AWS SDK (installed with boto3)
+
+# --- Environment & Config ---
+python-dotenv==1.0.1    # Load .env files into environment variables
+
+# --- Data Processing ---
+pandas==2.2.1           # Tabular data processing for event pipelines
+numpy==1.26.4           # Numerical operations for ML features
+
+# --- Machine Learning (Phase 8 - optional) ---
+scikit-learn==1.4.1     # Isolation Forest anomaly detection
+joblib==1.3.2           # Model serialisation (included with scikit-learn)
+
+# --- Dashboard (Phase 9) ---
+streamlit==1.32.2       # Local security dashboard UI
+plotly==5.20.0          # Interactive charts for the dashboard
+altair==5.2.0           # Declarative charts (used by Streamlit)
+
+# --- Utilities ---
+python-dateutil==2.9.0  # Robust timestamp parsing
+pytz==2024.1            # Timezone handling for event normalisation
+requests==2.31.0        # HTTP client (used by some Boto3 operations)
+
+# --- Testing ---
+pytest==8.1.1           # Test runner
+pytest-cov==5.0.0       # Coverage reporting
+moto==5.0.3             # AWS service mocking for unit tests
+
+# --- Security & Code Quality ---
+bandit==1.7.7           # Static security analysis for Python code

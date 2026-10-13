@@ -1,0 +1,280 @@
+{
+  "reportGeneratedAt": "2026-10-12T12:56:56.336961+00:00",
+  "summary": {
+    "totalEvents": 15,
+    "failedApiCalls": 3,
+    "rootActivityCount": 1,
+    "offHoursEvents": 3,
+    "suspiciousEvents": 10,
+    "totalFindings": 10
+  },
+  "severityBreakdown": {
+    "info": 5,
+    "medium": 5,
+    "high": 5
+  },
+  "findingSeverityBreakdown": {
+    "medium": 1,
+    "high": 9
+  },
+  "findingsByRule": {
+    "R01": 1,
+    "R05": 1,
+    "R04": 1,
+    "R03": 1,
+    "R06": 3,
+    "R08": 1,
+    "R07": 1,
+    "R02": 1
+  },
+  "topEventNames": [
+    {
+      "event": "ConsoleLogin",
+      "count": 4
+    },
+    {
+      "event": "DescribeInstances",
+      "count": 1
+    },
+    {
+      "event": "ListBuckets",
+      "count": 1
+    },
+    {
+      "event": "AttachUserPolicy",
+      "count": 1
+    },
+    {
+      "event": "AuthorizeSecurityGroupIngress",
+      "count": 1
+    },
+    {
+      "event": "StopLogging",
+      "count": 1
+    },
+    {
+      "event": "DescribeSecurityGroups",
+      "count": 1
+    },
+    {
+      "event": "PutBucketPolicy",
+      "count": 1
+    },
+    {
+      "event": "GetCallerIdentity",
+      "count": 1
+    },
+    {
+      "event": "CreateAccessKey",
+      "count": 1
+    }
+  ],
+  "topUsers": [
+    {
+      "user": "alice",
+      "count": 4
+    },
+    {
+      "user": "bob",
+      "count": 3
+    },
+    {
+      "user": "charlie",
+      "count": 2
+    },
+    {
+      "user": "root",
+      "count": 1
+    },
+    {
+      "user": "eve",
+      "count": 1
+    },
+    {
+      "user": "frank",
+      "count": 1
+    },
+    {
+      "user": "grace",
+      "count": 1
+    },
+    {
+      "user": "heidi",
+      "count": 1
+    },
+    {
+      "user": "ivan",
+      "count": 1
+    }
+  ],
+  "topSourceIPs": [
+    {
+      "ip": "203.0.113.10",
+      "count": 4
+    },
+    {
+      "ip": "198.51.100.77",
+      "count": 3
+    },
+    {
+      "ip": "203.0.113.20",
+      "count": 2
+    },
+    {
+      "ip": "198.51.100.55",
+      "count": 1
+    },
+    {
+      "ip": "198.51.100.99",
+      "count": 1
+    },
+    {
+      "ip": "198.51.100.200",
+      "count": 1
+    },
+    {
+      "ip": "203.0.113.30",
+      "count": 1
+    },
+    {
+      "ip": "192.0.2.100",
+      "count": 1
+    },
+    {
+      "ip": "203.0.113.50",
+      "count": 1
+    }
+  ],
+  "findings": [
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R01",
+      "ruleName": "Root account activity detected",
+      "detail": "Root used for ConsoleLogin",
+      "severity": "medium",
+      "eventId": "evt-003",
+      "eventTime": "2026-10-12T08:05:00Z",
+      "eventName": "ConsoleLogin",
+      "userName": "root",
+      "sourceIP": "198.51.100.55",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R05",
+      "ruleName": "IAM policy attached \u2014 review for privilege escalation",
+      "detail": "IAM change: AttachUserPolicy | params: {'userName': 'dave', 'policyArn': 'arn:aws:iam::aws:policy/AdministratorAccess'}",
+      "severity": "high",
+      "eventId": "evt-007",
+      "eventTime": "2026-10-12T08:15:00Z",
+      "eventName": "AttachUserPolicy",
+      "userName": "charlie",
+      "sourceIP": "203.0.113.20",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R04",
+      "ruleName": "Security group rule opened to 0.0.0.0/0 (all traffic)",
+      "detail": "SG rule allows traffic from 0.0.0.0/0 or ::/0",
+      "severity": "high",
+      "eventId": "evt-008",
+      "eventTime": "2026-10-12T08:20:00Z",
+      "eventName": "AuthorizeSecurityGroupIngress",
+      "userName": "charlie",
+      "sourceIP": "203.0.113.20",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R03",
+      "ruleName": "CloudTrail logging stopped or deleted",
+      "detail": "CloudTrail modified: StopLogging",
+      "severity": "high",
+      "eventId": "evt-009",
+      "eventTime": "2026-10-12T02:30:00Z",
+      "eventName": "StopLogging",
+      "userName": "eve",
+      "sourceIP": "198.51.100.99",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R06",
+      "ruleName": "High-severity API call during off-hours",
+      "detail": "High-severity event at off-hours: hour=2 UTC",
+      "severity": "high",
+      "eventId": "evt-009",
+      "eventTime": "2026-10-12T02:30:00Z",
+      "eventName": "StopLogging",
+      "userName": "eve",
+      "sourceIP": "198.51.100.99",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R06",
+      "ruleName": "High-severity API call during off-hours",
+      "detail": "High-severity event at off-hours: hour=3 UTC",
+      "severity": "high",
+      "eventId": "evt-011",
+      "eventTime": "2026-10-12T03:15:00Z",
+      "eventName": "PutBucketPolicy",
+      "userName": "frank",
+      "sourceIP": "198.51.100.200",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R08",
+      "ruleName": "S3 bucket policy or ACL modified",
+      "detail": "S3 policy/ACL changed on bucket: example-data-bucket",
+      "severity": "high",
+      "eventId": "evt-011",
+      "eventTime": "2026-10-12T03:15:00Z",
+      "eventName": "PutBucketPolicy",
+      "userName": "frank",
+      "sourceIP": "198.51.100.200",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R06",
+      "ruleName": "High-severity API call during off-hours",
+      "detail": "High-severity event at off-hours: hour=4 UTC",
+      "severity": "high",
+      "eventId": "evt-013",
+      "eventTime": "2026-10-12T04:00:00Z",
+      "eventName": "CreateAccessKey",
+      "userName": "heidi",
+      "sourceIP": "192.0.2.100",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R07",
+      "ruleName": "New AWS access key created",
+      "detail": "Access key created for user: service-account-x",
+      "severity": "high",
+      "eventId": "evt-013",
+      "eventTime": "2026-10-12T04:00:00Z",
+      "eventName": "CreateAccessKey",
+      "userName": "heidi",
+      "sourceIP": "192.0.2.100",
+      "awsRegion": "us-east-1"
+    },
+    {
+      "findingType": "RuleBased",
+      "ruleId": "R02",
+      "ruleName": "Possible console brute-force: \u22653 login failures within 5 minutes",
+      "detail": "User 'bob' had 3 login failures starting at 2026-10-12T08:10:00+00:00",
+      "severity": "high",
+      "eventId": "",
+      "eventTime": "2026-10-12T08:10:00+00:00",
+      "eventName": "ConsoleLogin",
+      "userName": "bob",
+      "sourceIP": "",
+      "awsRegion": ""
+    }
+  ]
+}

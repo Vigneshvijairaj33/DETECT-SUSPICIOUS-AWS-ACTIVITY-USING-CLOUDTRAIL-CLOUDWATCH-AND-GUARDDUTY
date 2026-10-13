@@ -1,0 +1,54 @@
+{
+  "_comment": "Copy this file to config.json and fill in real values. Never commit config.json.",
+  "project": {
+    "name": "AWS Suspicious Activity Detector",
+    "prefix": "suspicious-activity",
+    "version": "1.0.0"
+  },
+  "aws": {
+    "region": "us-east-1",
+    "profile": "default",
+    "account_id": "ACCOUNT_ID_PLACEHOLDER"
+  },
+  "cloudtrail": {
+    "trail_name": "security-monitoring-trail",
+    "s3_bucket": "cloudtrail-logs-ACCOUNT_ID-REGION",
+    "log_group": "/aws/cloudtrail/security-monitoring",
+    "enable_log_validation": true,
+    "include_global_service_events": true,
+    "is_multi_region": false
+  },
+  "cloudwatch": {
+    "log_retention_days": 90,
+    "alarm_evaluation_periods": 1,
+    "alarm_period_seconds": 300,
+    "metric_namespace": "SecurityMonitoring"
+  },
+  "sns": {
+    "topic_name": "security-alerts",
+    "alert_email": "your-email@example.com"
+  },
+  "guardduty": {
+    "detector_id": "DETECTOR_ID_PLACEHOLDER",
+    "finding_publishing_frequency": "FIFTEEN_MINUTES"
+  },
+  "pipeline": {
+    "input_path": "sample_data/sample_cloudtrail_events.json",
+    "output_path": "output/processed_events.csv",
+    "report_path": "output/security_report.json",
+    "anomaly_threshold": 0.15,
+    "lookback_hours": 24
+  },
+  "ml": {
+    "enabled": true,
+    "model_path": "ml/models/isolation_forest.pkl",
+    "contamination": 0.05,
+    "n_estimators": 100,
+    "random_state": 42
+  },
+  "dashboard": {
+    "port": 8501,
+    "title": "AWS Security Monitoring Dashboard",
+    "refresh_interval_seconds": 30
+  }
+}

@@ -1,0 +1,68 @@
+# ============================================================
+# .gitignore — AWS Suspicious Activity Detector
+# NEVER commit credentials, keys, or real log data
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.env
+*.env
+!.env.example
+
+# AWS credentials — NEVER commit these
+.aws/
+aws_credentials.json
+*credentials*
+*secret*
+*access_key*
+
+# Sensitive config — use .example versions only
+config/config.json
+!config/config.example.json
+
+# Real CloudTrail logs — may contain sensitive account data
+logs/
+*.log
+real_cloudtrail_logs/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# ML model artifacts (can be large)
+ml/models/
+*.pkl
+*.joblib
+*.h5
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# Temporary files
+tmp/
+temp/
+*.tmp
